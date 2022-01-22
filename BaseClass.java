@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	public ChromeDriver driver;
 	@BeforeMethod
-		public void beforeMethod()
+		public void preCondition()
 		{
 	WebDriverManager.chromedriver().setup();
 	driver = new ChromeDriver();
@@ -24,7 +24,7 @@ public class BaseClass {
 	driver.findElement(By.linkText("Leads")).click();
 }
 	@AfterMethod
-public void afterMethod()
+public void postCondition()
 {
 	driver.close();
 }
